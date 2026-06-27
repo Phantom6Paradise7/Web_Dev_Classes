@@ -1,0 +1,50 @@
+[{
+  "_id": {
+    "$oid": "6a30e9ad2fa775e8f65bc328"
+  },
+  "name": "Aarav Sharma",
+  "email": "aarav@example.com",
+  "age": 21,
+  "course": "Computer Science",
+  "cgpa": 8.7
+},
+{
+  "_id": {
+    "$oid": "6a30e9ad2fa775e8f65bc329"
+  },
+  "name": "Priya Verma",
+  "email": "priya@example.com",
+  "age": 20,
+  "course": "Information Technology",
+  "cgpa": 9.1
+},
+{
+  "_id": {
+    "$oid": "6a30e9ad2fa775e8f65bc32a"
+  },
+  "name": "Rahul Singh",
+  "email": "rahul@example.com",
+  "age": 22,
+  "course": "Electronics",
+  "cgpa": 8.2
+},
+{
+  "_id": {
+    "$oid": "6a30e9ad2fa775e8f65bc32b"
+  },
+  "name": "Neha Gupta",
+  "email": "neha@example.com",
+  "age": 21,
+  "course": "Mechanical Engineering",
+  "cgpa": 8.9
+},
+{
+  "_id": {
+    "$oid": "6a30e9ad2fa775e8f65bc32c"
+  },
+  "name": "Vikram Patel",
+  "email": "vikram@example.com",
+  "age": 23,
+  "course": "Civil Engineering",
+  "cgpa": 7.8
+}]
