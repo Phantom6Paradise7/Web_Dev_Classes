@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Public Folder is being viewed.</h1>
+    <h1>Name : <%=Dipesh.Name %> </h1>
+    <h1>Roll No. = <%=Dipesh.Occupation %> </h1>
+    <h1>Favorite Book = <%=Book %></h1>
+    <h1>Favorite Color = <%=Color.Name %></h1>
+    <% if(Dipesh.Age >= 30) {%>
+        <p>Killed 2 people with a pencil.</p>
+        <% } else { %>
+        <p>Just got married</p>
+    <% } %>
+    <!-- Priniting one to 10 -->
+    <% for(let i=0;i < 11;i++){ %>
+        <%= Dipesh.Name %>
+        <%= i %>
+    <% } %>
+</body>
+</html>
