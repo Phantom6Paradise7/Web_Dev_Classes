@@ -1,0 +1,675 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Data Profile</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .page-title {
+            color: #333;
+            margin-bottom: 30px;
+            text-transform: capitalize;
+        }
+        .student-card {
+            background: white;
+            padding: 20px 30px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            width: 100%;
+            max-width: 400px;
+            border-left: 5px solid #007bff;
+        }
+        .student-card h1 {
+            font-size: 16px;
+            font-weight: normal;
+            margin: 8px 0;
+            color: #555;
+        }
+        .student-card h1 strong {
+            color: #222;
+            display: inline-block;
+            width: 80px;
+        }
+        hr {
+            display: none; 
+        }
+    </style>
+</head>
+<body>
+    <h1 class="page-title">Students Data Profile</h1>
+    
+   <% allstudent.forEach((element)=>{ %>
+    <div class="student-card">
+        <h1><strong>ID:</strong> <%= element._id %></h1>
+        <h1><strong>Name:</strong> <%= element.name  %> </h1>
+        <h1><strong>Age:</strong> <%= element.age  %> </h1>
+        <h1><strong>Course:</strong> <%= element.course  %> </h1> 
+        <h1><strong>Version:</strong> <%= element.__v %></h1>
+    </div>
+    <hr>
+   <% }) %>
+
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Data</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f7f6;
+            margin: 0;
+            padding: 40px;
+            color: #333;
+        }
+
+        .page-title {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .student-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-top: 5px solid #667eea;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .student-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .student-card h3 {
+            margin: 0 0 15px 0;
+            color: #667eea;
+            font-size: 1.4em;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .data-row {
+            margin: 8px 0;
+            font-size: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .label {
+            font-weight: bold;
+            color: #7f8c8d;
+        }
+
+        .value {
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        .id-badge {
+            font-family: monospace;
+            background: #eee;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="page-title">Students Data Profile</h1>
+    
+    <div class="grid-container">
+        <% allstudent.forEach((element)=>{ %>
+            <div class="student-card">
+                <h3><%= element.name %></h3>
+                
+                <div class="data-row">
+                    <span class="label">ID:</span>
+                    <span class="value id-badge"><%= element._id %></span>
+                </div>
+                
+                <div class="data-row">
+                    <span class="label">Age:</span>
+                    <span class="value"><%= element.age %></span>
+                </div>
+                
+                <div class="data-row">
+                    <span class="label">Course:</span>
+                    <span class="value"><%= element.course || 'N/A' %></span>
+                </div>
+                
+                <div class="data-row">
+                    <span class="label">Version (__v):</span>
+                    <span class="value"><%= element.__v %></span>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+
+</body>
+</html> -->
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Profile Data</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #f3f4f6;
+            padding: 2rem;
+            color: #1f2937;
+        }
+        .page-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 800;
+            color: #111827;
+            margin-bottom: 2.5rem;
+            text-transform: capitalize;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-top: 4px solid #3b82f6;
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+        }
+        .card h1 {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #6b7280;
+            margin-bottom: 0.5rem;
+            word-wrap: break-word;
+        }
+        .card .name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 0.75rem;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 0.5rem;
+        }
+        .card span {
+            font-weight: 600;
+            color: #374151;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1 class="page-title">Students Data Profile</h1>
+    
+    <div class="grid-container">
+        <% allstudent.forEach((element) => { %>
+            <div class="card">
+                <h1 class="name"><%= element.name %></h1>
+                <h1><span>ID:</span> <%= element._id %></h1>
+                <h1><span>Age:</span> <%= element.age %></h1>
+                <h1><span>Course:</span> <%= element.course %></h1>
+                <h1><span>Version:</span> <%= element.__v %></h1>
+            </div>
+        <% }) %>
+    </div>
+
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profiles</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            margin: 0;
+            padding: 3rem;
+            min-height: 100vh;
+            font-family: 'Poppins', sans-serif;
+            background: #050505;
+            background-image: radial-gradient(circle at top right, #1a1a2e, #050505),
+                              radial-gradient(circle at bottom left, #16213e, #050505);
+            background-attachment: fixed;
+            color: #eaeaea;
+        }
+
+        .header-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: #d4af37;
+            margin-bottom: 4rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .student-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .student-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 4px; height: 100%;
+            background: linear-gradient(to bottom, #d4af37, transparent);
+        }
+
+        .student-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.06);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(212, 175, 55, 0.1);
+        }
+
+        .card-field {
+            margin-bottom: 1rem;
+        }
+
+        .field-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #888;
+            margin-bottom: 0.2rem;
+            display: block;
+        }
+
+        .field-value {
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin: 0;
+            color: #fff;
+        }
+
+        .name-highlight {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #d4af37;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        
+        .id-badge {
+            position: absolute;
+            top: 1rem; right: 1rem;
+            font-size: 0.7rem;
+            background: rgba(212, 175, 55, 0.1);
+            color: #d4af37;
+            padding: 4px 10px;
+            border-radius: 20px;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1 class="header-title">Data Archives</h1>
+    
+    <div class="grid-container">
+        <% allstudent.forEach((element)=>{ %>
+            <div class="student-card">
+                <div class="id-badge">ID: <%= element._id %></div>
+                
+                <h1 class="field-value name-highlight"><%= element.name %></h1>
+                
+                <div class="card-field">
+                    <span class="field-label">Age</span>
+                    <h1 class="field-value"><%= element.age %></h1>
+                </div>
+                
+                <div class="card-field">
+                    <span class="field-label">Course</span>
+                    <h1 class="field-value"><%= element.course %></h1>
+                </div>
+
+                <div class="card-field" style="margin-top: 1.5rem; opacity: 0.3;">
+                    <span class="field-label">Version</span>
+                    <h1 class="field-value" style="font-size: 0.8rem;">v<%= element.__v %></h1>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+<a href = "/delete"><</a>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profiles</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            margin: 0;
+            padding: 3rem;
+            min-height: 100vh;
+            font-family: 'Poppins', sans-serif;
+            background: #050505;
+            background-image: radial-gradient(circle at top right, #1a1a2e, #050505),
+                              radial-gradient(circle at bottom left, #16213e, #050505);
+            background-attachment: fixed;
+            color: #eaeaea;
+        }
+
+        .header-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: #d4af37;
+            margin-bottom: 4rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .student-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .student-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 4px; height: 100%;
+            background: linear-gradient(to bottom, #d4af37, transparent);
+        }
+
+        .student-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.06);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(212, 175, 55, 0.1);
+        }
+
+        .card-field {
+            margin-bottom: 1rem;
+        }
+
+        .field-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #888;
+            margin-bottom: 0.2rem;
+            display: block;
+        }
+
+        .field-value {
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin: 0;
+            color: #fff;
+        }
+
+        .name-highlight {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #d4af37;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        
+        .id-badge {
+            position: absolute;
+            top: 1rem; right: 1rem;
+            font-size: 0.7rem;
+            background: rgba(212, 175, 55, 0.1);
+            color: #d4af37;
+            padding: 4px 10px;
+            border-radius: 20px;
+            letter-spacing: 1px;
+        }
+
+        /* NEW: Styled Delete Button */
+        .delete-btn {
+            display: inline-block;
+            margin-top: auto; /* Pushes the button to the bottom of the card */
+            align-self: flex-start;
+            padding: 8px 16px;
+            background: rgba(255, 50, 50, 0.05);
+            color: #ff6b6b;
+            text-decoration: none;
+            border: 1px solid rgba(255, 50, 50, 0.2);
+            border-radius: 30px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .delete-btn:hover {
+            background: rgba(255, 50, 50, 0.15);
+            border-color: rgba(255, 50, 50, 0.4);
+            box-shadow: 0 5px 15px rgba(255, 50, 50, 0.1);
+            color: #ff8787;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1 class="header-title">Data Archives</h1>
+    
+    <div class="grid-container">
+        <% allstudent.forEach((element)=>{ %>
+            <div class="student-card">
+                <div class="id-badge">ID: <%= element._id %></div>
+                
+                <h1 class="field-value name-highlight"><%= element.name %></h1>
+                
+                <div class="card-field">
+                    <span class="field-label">Age</span>
+                    <h1 class="field-value"><%= element.age %></h1>
+                </div>
+                
+                <div class="card-field">
+                    <span class="field-label">Course</span>
+                    <h1 class="field-value"><%= element.course %></h1>
+                </div>
+
+                <div class="card-field" style="margin-top: 1.5rem; margin-bottom: 2rem; opacity: 0.3;">
+                    <span class="field-label">Version</span>
+                    <h1 class="field-value" style="font-size: 0.8rem;">v<%= element.__v %></h1>
+                </div>
+
+                <a href="/delete/<%= element._id %>" class="delete-btn">Delete Profile</a>
+                < a href = "/edit"> <%= element._id %>Edit Profile</a>
+            </div>
+        <% }) %>
+    </div>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profiles</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            margin: 0; padding: 3rem; min-height: 100vh;
+            font-family: 'Poppins', sans-serif; background: #050505;
+            background-image: radial-gradient(circle at top right, #1a1a2e, #050505), radial-gradient(circle at bottom left, #16213e, #050505);
+            background-attachment: fixed; color: #eaeaea;
+        }
+
+        .header-title {
+            text-align: center; font-family: 'Playfair Display', serif; font-size: 3.5rem;
+            color: #d4af37; margin-bottom: 4rem; text-transform: uppercase;
+            letter-spacing: 5px; text-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
+        }
+
+        .grid-container {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem; max-width: 1400px; margin: 0 auto;
+        }
+
+        .student-card {
+            background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05);
+            border-top: 1px solid rgba(212, 175, 55, 0.3); backdrop-filter: blur(10px);
+            border-radius: 16px; padding: 2rem; transition: all 0.4s ease;
+            position: relative; overflow: hidden; display: flex; flex-direction: column;
+        }
+
+        .student-card::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%;
+            background: linear-gradient(to bottom, #d4af37, transparent);
+        }
+
+        .student-card:hover {
+            transform: translateY(-10px); background: rgba(255, 255, 255, 0.06);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(212, 175, 55, 0.1);
+        }
+
+        .card-field { margin-bottom: 1rem; }
+
+        .field-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: #888; margin-bottom: 0.2rem; display: block; }
+        .field-value { font-size: 1.2rem; font-weight: 400; margin: 0; color: #fff; }
+
+        .name-highlight { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: #d4af37; margin-bottom: 1.5rem; font-style: italic; }
+        
+        .id-badge {
+            position: absolute; top: 1rem; right: 1rem; font-size: 0.7rem;
+            background: rgba(212, 175, 55, 0.1); color: #d4af37; padding: 4px 10px;
+            border-radius: 20px; letter-spacing: 1px;
+        }
+
+        .card-actions { margin-top: auto; display: flex; gap: 10px; }
+
+        .edit-btn, .delete-btn {
+            padding: 8px 16px; text-decoration: none; border-radius: 30px;
+            font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;
+        }
+
+        .edit-btn { background: rgba(50, 150, 255, 0.05); color: #4da3ff; border: 1px solid rgba(50, 150, 255, 0.2); }
+        .edit-btn:hover { background: rgba(50, 150, 255, 0.15); border-color: rgba(50, 150, 255, 0.4); box-shadow: 0 5px 15px rgba(50, 150, 255, 0.1); color: #82c0ff; }
+
+        .delete-btn { background: rgba(255, 50, 50, 0.05); color: #ff6b6b; border: 1px solid rgba(255, 50, 50, 0.2); }
+        .delete-btn:hover { background: rgba(255, 50, 50, 0.15); border-color: rgba(255, 50, 50, 0.4); box-shadow: 0 5px 15px rgba(255, 50, 50, 0.1); color: #ff8787; }
+        
+        .home-btn {
+            display: block; width: 200px; margin: 0 auto 3rem auto; text-align: center;
+            padding: 15px; border-radius: 50px; background: rgba(255, 255, 255, 0.1);
+            color: #fff; text-decoration: none; font-weight: bold; border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+        .home-btn:hover { background: rgba(255, 255, 255, 0.2); }
+    </style>
+</head>
+<body>
+    
+    <h1 class="header-title">Data Archives</h1>
+    <a href="/" class="home-btn">Return to Home</a>
+    
+    <div class="grid-container">
+        <% allstudent.forEach((element)=>{ %>
+            <div class="student-card">
+                <div class="id-badge">ID: <%= element._id %></div>
+                
+                <h1 class="field-value name-highlight"><%= element.name %></h1>
+                
+                <div class="card-field">
+                    <span class="field-label">Age</span>
+                    <h1 class="field-value"><%= element.age %></h1>
+                </div>
+
+                <div class="card-field" style="margin-top: 1.5rem; margin-bottom: 2rem; opacity: 0.3;">
+                    <span class="field-label">Version</span>
+                    <h1 class="field-value" style="font-size: 0.8rem;">v<%= element.__v %></h1>
+                </div>
+
+                <div class="card-actions">
+                    <a href="/edit/<%= element._id %>" class="edit-btn">Edit</a>
+                    <a href="/delete/<%= element._id %>" class="delete-btn">Delete</a>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+
+</body>
+</html>

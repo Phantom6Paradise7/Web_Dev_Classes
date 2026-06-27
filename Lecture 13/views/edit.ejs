@@ -1,0 +1,80 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="/update/<%=data.id%>" method="POST">
+    
+    <input type="text" name="name" placeholder="Enter Name" value="<%=data.name%>">
+    
+    <input type="number" name="age" placeholder="Enter Age" value="<%=data.age%>">
+    
+    <input type="email" name="email" placeholder="Enter Email" value="<%=data.email%>">
+    
+    <button type="submit">edit Student</button>
+
+</form>
+    
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Student</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500&display=swap');
+
+        body {
+            margin: 0; min-height: 100vh; display: flex; justify-content: center; align-items: center;
+            font-family: 'Poppins', sans-serif; background: linear-gradient(135deg, #141e30, #243b55); color: #fff;
+        }
+
+        .form-wrapper {
+            background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255, 255, 255, 0.2); border-left: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 3rem 4rem; border-radius: 20px; box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+            width: 100%; max-width: 400px; position: relative; overflow: hidden;
+        }
+
+        h2 { font-family: 'Playfair Display', serif; text-align: center; color: #4da3ff; font-size: 2.5rem; margin-top: 0; margin-bottom: 2rem; letter-spacing: 2px; }
+
+        form { display: flex; flex-direction: column; gap: 1.5rem; }
+
+        input {
+            width: 100%; padding: 12px 20px; background: rgba(255, 255, 255, 0.05); border: none;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2); color: #fff; font-size: 1rem;
+            font-family: 'Poppins', sans-serif; border-radius: 8px 8px 0 0; transition: all 0.3s ease; box-sizing: border-box;
+        }
+
+        input:focus { outline: none; background: rgba(255, 255, 255, 0.1); border-bottom-color: #4da3ff; }
+
+        button {
+            margin-top: 1rem; padding: 15px; border: none; border-radius: 50px;
+            background: linear-gradient(45deg, #4da3ff, #82c0ff); color: #1a1a1a;
+            font-size: 1.1rem; font-weight: 700; cursor: pointer; box-shadow: 0 10px 20px rgba(77, 163, 255, 0.3);
+            transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 2px;
+        }
+
+        button:hover { transform: translateY(-3px); box-shadow: 0 15px 25px rgba(77, 163, 255, 0.5); }
+    </style>
+</head>
+<body>
+
+    <div class="form-wrapper">
+        <h2>Update Profile</h2>
+        <form action="/update/<%= data._id %>" method="POST">
+            <input type="text" name="name" placeholder="Enter Name" value="<%= data.name %>" required>
+            <input type="number" name="age" placeholder="Enter Age" value="<%= data.age %>" required>
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+    
+</body>
+</html>
