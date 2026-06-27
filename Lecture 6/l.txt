@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Registration Form</title>
+    <style>
+        /* Optional basic styling for presentation */
+        body { font-family: sans-serif; margin: 40px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input[type="text"], input[type="email"], input[type="password"], select, textarea {
+            width: 100%; padding: 8px; box-sizing: border-box; 
+        }
+        .radio-group, .checkbox-group { display: flex; gap: 15px; }
+        .radio-group label, .checkbox-group label { display: inline; font-weight: normal; }
+        button { padding: 10px 20px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <h2>Registration Form</h2>
+
+    <!-- The form container -->
+    <form action="/register" method="POST">
+        
+        <!-- Text Input Field -->
+        <div class="form-group">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="user_name" placeholder="John Wick" required>
+        </div>
+
+        <!-- Email Input Field -->
+        <div class="form-group">
+            <label for="userEmail">Email Address:</label>
+            <input type="email" id="userEmail" name="user_email" placeholder="name@example.com" required>
+        </div>
+
+        <!-- Password Input Field -->
+        <div class="form-group">
+            <label for="userPassword">Password:</label>
+            <input type="password" id="userPassword" name="user_password" required>
+        </div>
+
+        <!-- Radio Buttons (Single Selection) -->
+        <div class="form-group">
+            <label>Gender:</label>
+            <div class="radio-group">
+                <input type="radio" id="genderMale" name="gender" value="male">
+                <label for="genderMale">Male</label>
+                
+                <input type="radio" id="genderFemale" name="gender" value="female">
+                <label for="genderFemale">Female</label>
+            </div>
+        </div>
+
+        <!-- Dropdown / Select Menu -->
+        <div class="form-group">
+            <label for="country">Country:</label>
+            <select id="country" name="user_country">
+                <option value="">--Select a Country--</option>
+                <option value="us">United States</option>
+                <option value="ca">Canada</option>
+                <option value="uk">United Kingdom</option>
+            </select>
+        </div>
+
+        <!-- Textarea for Longer Text -->
+        <div class="form-group">
+            <label for="bio">Biography:</label>
+            <textarea id="bio" name="user_bio" rows="4" placeholder="Tell us about yourself..."></textarea>
+        </div>
+
+        <!-- Checkbox (Multi or Single Binary Selection) -->
+        <div class="form-group">
+            <div class="checkbox-group">
+                <input type="checkbox" id="terms" name="accept_terms" value="yes" required>
+                <label for="terms">I agree to the terms and conditions</label>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit Registration</button>
+
+    </form>
+
+</body>
+</html> 
+<!-- <!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ISI Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+
+        form {
+            max-width: 500px;
+            margin: auto;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="" method="post">
+        <h2>ISI Registration Form</h2>
+
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="father">Father's/Guardian's Name</label>
+        <input type="text" id="father" name="father">
+
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" name="dob">
+
+        <label for="gender">Gender</label>
+        <select id="gender" name="gender">
+            <option value="">Select Gender</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+        </select>
+
+        <label for="phone">Contact Number</label>
+        <input type="tel" id="phone" name="phone">
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email">
+
+        <label for="address">Address</label>
+        <textarea id="address" name="address" rows="3"></textarea>
+
+        <label for="school">School/College Name</label>
+        <input type="text" id="school" name="school">
+
+        <label for="class">Class/Year</label>
+        <input type="text" id="class" name="class">
+
+        <label for="reason">Reason for Registration</label>
+        <textarea id="reason" name="reason" rows="3"></textarea>
+
+        <button type="submit">Register</button>
+    </form>
+
+</body>
+
+</html> -->
+
