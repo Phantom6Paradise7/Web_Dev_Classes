@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Faculty</title>
+</head>
+
+<body>
+
+    <h1>Faculty's Profile</h1>
+
+    <% allFaculty.forEach((element)=> { %>
+
+        <h2>
+            <%= element.name %>
+        </h2>
+        <p>Age: <%= element.age %>
+        </p>
+        <p>Email: <%= element.email %>
+        </p>
+
+        <% }) %>
+
+</body>
+
+</html>

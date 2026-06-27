@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>students data profile</h1>
+    <% allStudent.forEach((element) => {%>
+       <h2><%= element.name %></h2> 
+       <h3><%= element.age %> </h3>
+       <h3><%= element.roll %> </h3>
+   <% }); %>
+</body>
+</html>
