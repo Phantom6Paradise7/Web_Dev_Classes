@@ -11,7 +11,7 @@
 
 
 // // mongoose.connect("mongodb://127.0.0.1:27017/collegeDB")
-// mongoose.connect("mongodb+srv://vikas56:vikas1234@cluster0.it2bd.mongodb.net/?appName=Cluster0")
+// mongoose.connect("mongodb+srv://vikas56:Passwordcluster0.it2bd.mongodb.net/?appName=Cluster0")
 //     .then(() => {
 //         console.log("mongoDB local wala connected..");
 
