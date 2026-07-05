@@ -9,7 +9,7 @@
 // app.use(express.urlencoded({ extended: true })); // for application
 
 // // mongoose.connect("mongodb://127.0.0.1:27017/CollegeDB")
-// mongoose.connect("mongodb+srv://rajputmayank_db:Passwordcluster01.qiop60v.mongodb.net/?appName=Cluster01")
+// mongoose.connect("mongodb+srv://rajputmayank_db:.....")
 //     .then(() => console.log("College DB Connected"))
 //     .catch(err => console.log(err));
 
