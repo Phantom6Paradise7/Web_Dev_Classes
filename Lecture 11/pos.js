@@ -8,7 +8,7 @@ app.set('view engine', 'ejs');
 app.use(express.json()); //for JSON data parsing
 app.use(express.urlencoded({ extended: true })); // for application
 
-mongoose.connect("mongodb+srv://mansabhatt62587_db_user:This_is_mongodb_password_dont_forget123@cluster7.klfzxyk.mongodb.net/?appName=Cluster7")
+mongoose.connect("...Here something is written")
     .then(() => console.log("College DB Connected"))
     .catch(err => console.log(err));
 
