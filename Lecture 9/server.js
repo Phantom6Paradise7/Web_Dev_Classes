@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
 const port = 3000;
-mongoose.connect("mongodb+srv://mansabhatt62587_db_user:Paasword:cluster7.klfzxyk.mongodb.net/")
+mongoose.connect("mongodb+srv://accountname_db_user:Password:cluster0.klfzxyk.mongodb.net/")
 .then(() =>console.log("DB Connected"))
 .catch(err =>console.log(err));
 
